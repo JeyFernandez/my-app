@@ -1,5 +1,5 @@
 body {
-    background-image: url(../img/almacen-farmacia.jpg);
+  background-image: url('../img/almacen-farmacia.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -7,11 +7,13 @@ body {
 }
 .flex{
   display: flex;
+  justify-content: space-between;
 }
 .container{
+
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 30%;
     transform: translate(-60%, -50%);
 }
 .form {
@@ -92,7 +94,7 @@ body {
     position: relative;
   }
   
-  .form label .input {
+  .form label .input1 {
     width: 100%;
     padding: 10px 10px 20px 10px;
     outline: 0;
@@ -100,7 +102,26 @@ body {
     border-radius: 10px;
   }
   
+  .form label .input {
+    margin: 4px;
+    padding: 10px 10px 20px 15px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
   .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    
+  }
+  .form label .input1 + span {
     position: absolute;
     left: 10px;
     top: 15px;
@@ -137,23 +158,62 @@ body {
       -webkit-appearance: none;
       margin: 0;
       }
-  .submit {
-    border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    -webkit-transform: .3s ease;
-        -ms-transform: .3s ease;
-            transform: .3s ease;
-    margin-bottom: 20px;
-  }
-  
-  .submit:hover {
-    background-color: rgb(56, 90, 194);
-  }
+      .submit {
+        background:  royalblue;;
+        color: white;
+        font-family: inherit;
+        padding: 0.35em;
+        padding-left: 1.2em;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 0.9em;
+        border: none;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        box-shadow: inset 0 0 1.6em -0.6em #714da6;
+        overflow: hidden;
+        position: relative;
+        height: 2.8em;
+        padding-right: 3.3em;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      
+      .submit .icon {
+        background: rgb(5, 193, 246);
+        margin-left: 1em;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.2em;
+        width: 2.2em;
+        border-radius: 0.7em;
+        box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+        right: 0.3em;
+        transition: all 0.3s;
+      }
+      
+      .submit:hover .icon {
+        cursor: pointer;
+        width: calc(100% - 0.6em);
+      }
+      
+      .submit.icon svg {
+        width: 1.1em;
+        transition: transform 0.3s;
+        color: #7b52b9;
+      }
+      
+      .submit:hover .icon svg {
+        transform: translateX(0.1em);
+      }
+      
+      .submit:active .icon {
+        transform: scale(0.95);
+      }
+      
   
   @-webkit-keyframes pulse {
     from {
@@ -186,44 +246,98 @@ body {
   .container2{
     position: absolute;
     top: 50%;
-    left: 60%;
-    transform: translate(-10%, -50%);
-}
-  .form2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
+    left: 55%;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.53);
+    transform: translate(-20%, -50%);
     background-color: #fff;
-    padding-right: 50px;
-    padding-left: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
+  }
+  .container2 h2{
+    font-family:'Lucida Sans Regular', 'Lucida Grande', sans-serif;
+    color: rgb(5, 61, 246);
+    text-align: center;
+  }
+  table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 16px;
+    margin: 10px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  th {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+  }
+  
+  td {
+    padding-inline: 10px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+  }
+  td button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #5b5e63;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 8px;
     position: relative;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.53);
+    cursor: pointer;
+    overflow: hidden;
   }
-  .title2{
-    font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
+  
+  td button span:not(:nth-child(6)) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: #ed0c0c;
+    border-radius: 50%;
+    transition: .6s ease;
+  }
+  
+  td button span:nth-child(6) {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
-  .items{
-    display: flex;
+  
+  td button span:nth-child(1) {
+    transform: translate(-3.3em, -4em);
   }
-  .dt{
-    font-size: 20px;
-    font-weight: 600;
-    color: green;
-    padding: 10px;
+  
+  td button span:nth-child(2) {
+    transform: translate(-6em, 1.3em);
+  }
+  
+  td button span:nth-child(3) {
+    transform: translate(-.2em, 1.8em);
+  }
+  
+  td button span:nth-child(4) {
+    transform: translate(3.5em, 1.4em);
+  }
+  
+  td button span:nth-child(5) {
+    transform: translate(3.5em, -3.8em);
+  }
+  
+  td button:hover span:not(:nth-child(6)) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: 1.5s ease;
+  }
+    
+  tr:hover td {
+    background: #d0dafd;
+    color: #339;
   }
